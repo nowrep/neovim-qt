@@ -298,6 +298,9 @@ void Shell::handleResize(uint64_t cols, uint64_t rows)
 		m_image.swap(new_image);
 		updateGeometry();
 		emit neovimResized(neovimSize());
+		if (!isVisible()) {
+			show();
+		}
 	}
 }
 
